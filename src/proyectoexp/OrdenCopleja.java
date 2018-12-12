@@ -1,0 +1,560 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package proyectoexp;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import net.sf.clipsrules.jni.Environment;
+
+/**
+ *
+ * @author diego's
+ */
+public class OrdenCopleja extends javax.swing.JFrame {
+
+    /**
+     * Creates new form AspectoSemantico
+     */
+    
+     DefaultTableModel m;
+     DefaultTableModel m1;
+     DefaultTableModel m2;
+    private Environment clips;
+    private ArrayList list1;
+    private ArrayList list2;
+    
+    public OrdenCopleja() {
+        initComponents();
+        this.setSize(800, 650);
+        this.setLocationRelativeTo(null);
+         m = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return column!=0;
+            }
+        };
+        list1=new ArrayList();
+        list2=new ArrayList();
+           
+        m.addColumn("Edad");
+        m.addColumn("Objeto");
+        m.addColumn("Ordenes<Dame>");
+        m.addColumn("Respuesta");
+        
+        m.addRow(new Object[]{"3","muñeca,peota,silla,peine","pelota,peine",""});
+        m.addRow(new Object[]{"4","muñecca,pelota,silla,botella,zapato","muñeca,zapato,silla",""});
+        m.addRow(new Object[]{"5","muñeca,pelota,botella,zapato,moto","moto,silla,muñeca,pelota",""});
+       
+                
+        jTable1.setRowHeight(18);
+        jTable1.setModel(m);
+        
+        TableColumn col0 =jTable1.getColumnModel().getColumn(0);
+        TableColumn col =jTable1.getColumnModel().getColumn(1);
+        TableColumn col1 =jTable1.getColumnModel().getColumn(2);
+        TableColumn col2 =jTable1.getColumnModel().getColumn(3);
+        
+        col0.setPreferredWidth(60);
+        col.setPreferredWidth(300);
+        col1.setPreferredWidth(300);
+        col2.setPreferredWidth(80);
+    
+        
+        m1 = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return column!=0;
+            }
+            
+        };
+    
+        
+        m1.addColumn("Edad");
+        m1.addColumn("Ordenes");
+        m1.addColumn("Respuesta");
+        
+        m1.addRow(new Object[]{"4","Guarda la pelota en la caja y dame la muñeca",""});
+        m1.addRow(new Object[]{"5","Abre la pueta, dame el peine y coge el lápiz",""});
+        m1.addRow(new Object[]{"6","Pon el vaso sobre la silla, la botella en el suelo, cierra la puerta y enciende la luz",""});
+        m1.addRow(new Object[]{"7","Pon la muñeca sobre la mesa,el zapato en la caja,dame el peine y siéntate",""});
+       
+        
+        jTable2.setRowHeight(18);
+        jTable2.setModel(m1);
+        
+        TableColumn col3 =jTable2.getColumnModel().getColumn(0);
+        TableColumn col4=jTable2.getColumnModel().getColumn(1);
+        TableColumn col5 =jTable2.getColumnModel().getColumn(2);
+        
+        col3.setPreferredWidth(20);
+        col4.setPreferredWidth(550);
+        col5.setPreferredWidth(60);
+                
+          m2 = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return column!=0;
+            }    
+        };
+           
+        m2.addColumn("Edad");
+        m2.addColumn("Ordenes");
+        m2.addColumn("Respuesta");
+        
+        m2.addRow(new Object[]{"3","Pon el vaso encima de la muñeca",""});
+        m2.addRow(new Object[]{"4","Pon el lápiz arriba del gato y la botella arriba de la planta",""});
+        m2.addRow(new Object[]{"5","Pon el vaso sobre la cabra de la nena,lasilla sobre el perro y toca los pajaritos",""});
+        m2.addRow(new Object[]{"6","Pon el zapato sobre la jaula,el lápiz sobre la maceta,la silla sobr la pelota y tócale la cola al gato",""});
+        
+        jTable3.setRowHeight(18);
+        jTable3.setModel(m2);
+        
+        TableColumn col6 =jTable3.getColumnModel().getColumn(0);
+        TableColumn col7=jTable3.getColumnModel().getColumn(1);
+        TableColumn col8 =jTable3.getColumnModel().getColumn(2);
+        
+        col6.setPreferredWidth(20);
+        col7.setPreferredWidth(550);
+        col8.setPreferredWidth(60);
+        //clips.load("ordenes.clp");
+
+    }
+    public void datos(String cedula, String nombres, String apellidos, String fechaNac){
+        jtcedula.setText(cedula);
+        jtnombres.setText(nombres);
+        jtapellidos.setText(apellidos);
+        jtfechaNac.setText(fechaNac);
+    }
+    
+    public void lista(ArrayList l1, ArrayList l2){
+        list1=l1;
+        list2=l2;
+    }
+    
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel4 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jtcedula = new javax.swing.JTextField();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jtnombres = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jtapellidos = new javax.swing.JTextField();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jtfechaNac = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aspecto Semántico");
+
+        jPanel4.setPreferredSize(new java.awt.Dimension(50, 403));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel4, java.awt.BorderLayout.LINE_START);
+
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jPanel5.setPreferredSize(new java.awt.Dimension(30, 300));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 494, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel5, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.LINE_END);
+
+        jPanel6.setPreferredSize(new java.awt.Dimension(394, 30));
+        jPanel6.setLayout(new java.awt.CardLayout());
+
+        jButton1.setText("SIGUIENTE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton1, "card2");
+
+        getContentPane().add(jPanel6, java.awt.BorderLayout.PAGE_END);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(390, 105));
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel11.setPreferredSize(new java.awt.Dimension(139, 219));
+        jPanel11.setLayout(new javax.swing.BoxLayout(jPanel11, javax.swing.BoxLayout.Y_AXIS));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("DATOS PERSONALES ");
+        jLabel1.setPreferredSize(new java.awt.Dimension(130, 45));
+        jPanel11.add(jLabel1);
+
+        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel7.setPreferredSize(new java.awt.Dimension(10, 450));
+        jPanel7.setLayout(new javax.swing.BoxLayout(jPanel7, javax.swing.BoxLayout.LINE_AXIS));
+
+        jLabel31.setText("     Cedula:     ");
+        jLabel31.setPreferredSize(new java.awt.Dimension(85, 14));
+        jPanel7.add(jLabel31);
+
+        jtcedula.setEditable(false);
+        jtcedula.setPreferredSize(new java.awt.Dimension(29, 20));
+        jPanel7.add(jtcedula);
+
+        jPanel11.add(jPanel7);
+
+        jPanel8.setPreferredSize(new java.awt.Dimension(10, 450));
+        jPanel8.setLayout(new javax.swing.BoxLayout(jPanel8, javax.swing.BoxLayout.X_AXIS));
+
+        jLabel34.setText("     Nombres:      ");
+        jLabel34.setPreferredSize(new java.awt.Dimension(95, 14));
+        jPanel8.add(jLabel34);
+
+        jtnombres.setEditable(false);
+        jtnombres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtnombresActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jtnombres);
+
+        jPanel11.add(jPanel8);
+
+        jPanel9.setPreferredSize(new java.awt.Dimension(10, 450));
+        jPanel9.setLayout(new javax.swing.BoxLayout(jPanel9, javax.swing.BoxLayout.X_AXIS));
+
+        jLabel35.setText("     Apellidos:    ");
+        jLabel35.setPreferredSize(new java.awt.Dimension(85, 14));
+        jPanel9.add(jLabel35);
+
+        jtapellidos.setEditable(false);
+        jPanel9.add(jtapellidos);
+
+        jPanel11.add(jPanel9);
+
+        jPanel10.setPreferredSize(new java.awt.Dimension(10, 450));
+        jPanel10.setLayout(new javax.swing.BoxLayout(jPanel10, javax.swing.BoxLayout.X_AXIS));
+
+        jLabel37.setText("     Fecha de nacimiento:   ");
+        jLabel37.setPreferredSize(new java.awt.Dimension(155, 14));
+        jPanel10.add(jLabel37);
+
+        jtfechaNac.setEditable(false);
+        jPanel10.add(jtfechaNac);
+
+        jPanel11.add(jPanel10);
+
+        jPanel1.add(jPanel11, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
+
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Ordenes Complejas");
+        jPanel3.add(jLabel2);
+
+        jLabel4.setText("Ordenes de Selección de Objetos");
+        jPanel3.add(jLabel4);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel3.add(jScrollPane1);
+
+        jLabel3.setText("Ordenes de Selección de Objetos");
+        jPanel3.add(jLabel3);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel3.add(jScrollPane2);
+
+        jLabel5.setText("Ordenes Complejas de Selección y Ejecución");
+        jPanel3.add(jLabel5);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel3.add(jScrollPane3);
+
+        getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AspectoPensamiento ap=new AspectoPensamiento();
+       
+        ArrayList lista=new ArrayList();
+        ArrayList lista1=new ArrayList();
+        ArrayList lista2=new ArrayList();
+        String ced=jtcedula.getText();
+        String nom=jtnombres.getText();
+        String ape=jtapellidos.getText();
+        String f=jtfechaNac.getText();
+        Double c=0.0;
+        Double ic=0.0;
+        
+        Double c1=0.0;
+        Double ic1=0.0;
+        
+        Double c2=0.0;
+        Double ic2=0.0;
+        
+        Double c3=0.0;
+        Double ic3=0.0;
+        
+        String t="(assert (ordenC1 (cedula "+ ced+")(objetos \"";
+        ap.datos(ced, nom, ape, f);
+        
+        String t1="(assert (ordenC2 (cedula "+ ced+")(pregunta \"";
+        String t2="(assert (ordenC3 (cedula "+ ced+")(pregunta \"";
+        String respuesta ="";
+        String respuesta1 ="";
+        String respuesta2 ="";
+        int items=jTable1.getRowCount()+jTable2.getRowCount()+jTable3.getRowCount();
+        for (int j = 0; j < items; j++) {
+            if(j<3){
+            respuesta = (String) jTable1.getValueAt(j, 3).toString().toUpperCase();
+            if (respuesta.equals("+") || respuesta.equals("-")) {
+                if (respuesta.equals("+")) {
+                    lista.add(t + jTable1.getValueAt(j, 1) + "\") (dame \""+ jTable1.getValueAt(j, 2) + "\")(respuesta " + respuesta + ")))");
+                    if (respuesta.equals("+")) {
+                        c++;
+                        c1++;
+                    }
+                } else {
+                    if (respuesta.equals("-")) {
+                        lista.add(t + jTable1.getValueAt(j, 1) + "\") (dame \""+ jTable1.getValueAt(j, 2) + "\")(respuesta " + respuesta + ")))");
+                        if (respuesta.equals("-")) {
+                            ic++;
+                            ic1++;
+                        }
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Los signos ingresados no son incorrectos. Se debe calificar con un + o un -");
+                jTable1.setValueAt("", j, 3);
+            }
+           }else{
+                if(j <7){
+                    respuesta = (String) jTable2.getValueAt(j-3, 2).toString().toUpperCase();
+                    if (respuesta.equals("+") || respuesta.equals("-")) {
+                        if (respuesta.equals("+")) {
+                            lista1.add(t1 + jTable2.getValueAt(j-3, 1) + "\")(respuesta " + respuesta + ")))");
+                            if (respuesta.equals("+")) {
+                                c++;
+                                c2++;
+                            }
+                        } else {
+                            if (respuesta.equals("-")) {
+                                lista1.add(t + jTable2.getValueAt(j-3, 1) + "\")(respuesta " + respuesta + ")))");
+                                if (respuesta.equals("-")) {
+                                    ic++;
+                                    ic2++;
+                                }
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Los signos ingresados no son incorrectos. Se debe calificar con un + o un -");
+                        jTable2.setValueAt("", j-3, 2);
+                    }
+                }else{
+                    respuesta = (String) jTable3.getValueAt(j-7, 2).toString().toUpperCase();
+                    if (respuesta.equals("+") || respuesta.equals("-")) {
+                        if (respuesta.equals("+")) {
+                            lista2.add(t2 + jTable3.getValueAt(j-7, 1) + "\")(respuesta " + respuesta + ")))");
+                            if (respuesta.equals("+")) {
+                                c++;
+                                c3++;
+                            }
+                        } else {
+                            if (respuesta.equals("-")) {
+                                lista2.add(t + jTable3.getValueAt(j-7, 1) + "\")(respuesta " + respuesta + ")))");
+                                if (respuesta.equals("-")) {
+                                    ic++;
+                                    ic3++;
+                                }
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Los signos ingresados no son incorrectos. Se debe calificar con un + o un -");
+                        jTable3.setValueAt("", j-7, 2);
+                    }
+                }
+            }
+        }
+        if (lista.size() == 3 && lista2.size() == 4 && lista2.size() ==4 ) {
+            for (int i = 0; i < lista.size(); i++) {
+                //System.out.println(lista.get(i));
+                //clips.eval(lista.get(i).toString());
+            }
+            String res1 = "(assert (respOrdenC1 (cedula " + ced + ")(correctas " +((c1*10)/3) + ") (incorrectas "+((ic1*10)/3)+")))";
+            lista.add(res1);
+            String res2 = "(assert (respOrdenC2 (cedula " + ced + ")(correctas " + ((c2*10)/4) + ") (incorrectas "+((ic2*10)/4)+")))";
+            lista1.add(res2);
+            String res3 = "(assert (respOrdenC3 (cedula " + ced + ")(correctas " + ((c3*10)/4) + ") (incorrectas "+ ((ic3*10)/4) +")))";
+            lista2.add(res3);
+            JOptionPane.showMessageDialog(null, "El resultado del test realizado al niño "
+                    + nom + " " + ape + " es de: Correctas=" + ((c*10)/11) + "/10  Incorrectas=" + ((ic*10)/11)+"/10");
+            //clips.eval(res1);
+            ap.listas(list1, list2, lista, lista1, lista2);
+            //this.hide();
+            jButton1.setEnabled(false);
+            ap.setVisible(true);
+            //System.out.println(clips.eval("(facts)"));
+            
+            //System.out.println("Correctas: "+c+"     Incorrectas: "+ic);
+        }
+        //lista.clear();
+        
+        
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jtnombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnombresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtnombresActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(OrdenCopleja.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(OrdenCopleja.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(OrdenCopleja.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(OrdenCopleja.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new OrdenCopleja().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTextField jtapellidos;
+    private javax.swing.JTextField jtcedula;
+    private javax.swing.JTextField jtfechaNac;
+    private javax.swing.JTextField jtnombres;
+    // End of variables declaration//GEN-END:variables
+}
